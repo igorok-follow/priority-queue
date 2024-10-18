@@ -44,7 +44,7 @@ func (l *list) Add(val, priority int) {
 	}
 
 	current := l.head
-	for current.Next.Next != nil && current.Priority > n.Priority {
+	for !current.Next.IsEnd && current.Next.Priority > n.Priority {
 		current = current.Next
 	}
 
